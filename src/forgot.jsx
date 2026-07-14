@@ -2,10 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import Login from './login';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 
 function Forgot() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  
+      const handleNext = async () => {
+      if (!isEmailValid) {
+          alert("Enter a valid email.");
+          return;
+      }};
   return (
     <div className='w-full h-screen flex justify-center items-center bg-linear-to-br from-gray-600 via-blue-300 to-gray-950'>
       <div className=' bg-white/30 h-[50vh] w-[50%] rounded-xl text-black'>
@@ -17,12 +26,12 @@ function Forgot() {
           <div className="m-5 text-sm ">
             <label className="font-semibold">Email</label>
             <div><input className="border border-gray-500 p-2 px-15 rounded-lg" type="email"
-            placeholder="Enter your email" />
+            placeholder="Enter your email" onChange={(e) => setEmail(e.target.value)}/>
             </div>
           </div>
         </form>
         <div className='ml-10'>
-          <button  onClick={() => navigate("/otp")} className='bg-black px-25 rounded-xl active:bg-black/60 text-white'>Get OTP</button>
+          <button  onClick={() => navigate("/otp")} className='bg-black px-25 rounded-xl active:bg-black/60 text-white'onClick={handleNext}>Get OTP</button>
         </div>
         <div className='ml-25 mt-6'>
           <Link to='/' className='underline pt-2 active:text-green-700'>Go back to login page</Link>

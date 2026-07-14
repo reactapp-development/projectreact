@@ -1,9 +1,17 @@
 import React from "react";
 import Forgot from "./forgot";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 
 function Login(){
+  const [email, setEmail] = useState("");
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    const handleNext = async () => {
+    if (!isEmailValid) {
+        alert("Enter a valid email.");
+        return;
+    }};
   return(
     <div className="w-full h-screen bg-gray-800 flex justify-center items-center" >
       
@@ -25,7 +33,9 @@ function Login(){
             <div><input className="border border-gray-500 p-2 px-15 rounded-lg"
             type="email"
             placeholder="Enter your email" 
-            required/>
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}/>
             </div>
             
           </div>
@@ -50,7 +60,7 @@ function Login(){
           </div>
         
         <div className="flex justify-center items-center">
-          <button className="bg-black text-white text-sm font-semibold mt-6 mb-2 py-1 px-30 rounded-2xl active:bg-gray-500">Login</button>
+          <button className="bg-black text-white text-sm font-semibold mt-6 mb-2 py-1 px-30 rounded-2xl active:bg-gray-500" onClick={handleNext}>Login</button>
         </div>
         <div className="flex items-center">
           <hr className="grow border-gray-300"/>
