@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Otp() {
+  const navigate = useNavigate();
+   const [timeLeft, setTimeLeft] = useState(30);
+
+    //OTP Storage
+    const [otp, setOtp] = useState("");
+
+  const handleNext = async () => {
+    const storedOTP = sessionStorage.getItem("otp");
+
+    if (otp.trim() === storedOTP) {
+        alert("OTP verification successful");
+
+        navigate("/Confirm/NewPass");
+
+    } else {
+        alert("Invalid OTP");
+    }
+};
+
+ // Timer
+   useEffect(() => {
+    if (timeLeft <= 0) return;
+
+    const timer = setTimeout(() => {
+        setTimeLeft(timeLeft - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+}, [timeLeft]);
   return (
     <div className="w-full h-screen flex justify-center items-center bg-linear-to-br from-gray-600 via-blue-300 to-gray-950">
       <div className="bg-white/30 w-[50%] rounded-xl text-black p-8">
@@ -19,44 +49,24 @@ function Otp() {
           <label className="font-semibold text-sm">
             OTP
           </label>
+          <label>
+            <p>OTP expires in {timeLeft}s</p>
+          </label>
 
           <div className="flex gap-3 mt-2">
-            <input 
-              className="w-12 h-12 text-center border border-gray-500 rounded-lg"
-              type="text"
-              maxLength="1"
-            />
-            <input 
-              className="w-12 h-12 text-center border border-gray-500 rounded-lg"
-              type="text"
-              maxLength="1"
-            />
-            <input 
-              className="w-12 h-12 text-center border border-gray-500 rounded-lg"
-              type="text"
-              maxLength="1"
-            />
-            <input 
-              className="w-12 h-12 text-center border border-gray-500 rounded-lg"
-              type="text"
-              maxLength="1"
-            />
-            <input 
-              className="w-12 h-12 text-center border border-gray-500 rounded-lg"
-              type="text"
-              maxLength="1"
-            />
-            <input 
-              className="w-12 h-12 text-center border border-gray-500 rounded-lg"
-              type="text"
-              maxLength="1"
+            <input
+                type="text"
+                maxLength={6}
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                className="border p-2 rounded"
             />
           </div>
         </div>
 
 
         <div className="flex justify-center mt-8">
-          <button className="bg-black text-white px-20 py-2 rounded-xl active:bg-gray-700">
+          <button className="bg-black text-white px-20 py-2 rounded-xl active:bg-gray-700"  onClick={handleNext}>
             Verify OTP
           </button>
         </div>
