@@ -3,8 +3,8 @@ import Login from './login'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import Forgot from './forgot.jsx'
 import Account from './account.jsx'
-import { path } from 'framer-motion/client'
 import Otp from './otp.jsx'
+import Password from './password.jsx'
 
 function App() {
    const router=createBrowserRouter([
@@ -24,6 +24,10 @@ function App() {
       path:"/account",
       element:<Account/>
     },
+    {
+      path:"/password",
+      element:<Password/>
+    }
     
   ])
   return (

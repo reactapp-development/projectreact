@@ -15,7 +15,7 @@ function Otp() {
     if (otp.trim() === storedOTP) {
         alert("OTP verification successful");
 
-        navigate("/Confirm/NewPass");
+        navigate("/password");
 
     } else {
         alert("Invalid OTP");
@@ -66,9 +66,12 @@ function Otp() {
 
 
         <div className="flex justify-center mt-8">
-          <button className="bg-black text-white px-20 py-2 rounded-xl active:bg-gray-700"  onClick={handleNext}>
-            Verify OTP
-          </button>
+          <button
+          className="bg-black text-white px-20 py-2 rounded-xl active:bg-gray-700"
+          onClick={handleNext}
+        >
+          Verify OTP
+        </button>
         </div>
 
 

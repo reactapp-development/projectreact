@@ -1,6 +1,6 @@
 import React from "react";
 
-const about = () => {
+const Password = () => {
     return ( 
         <div>
             <h1>hello welcome to about section</h1>
@@ -8,4 +8,4 @@ const about = () => {
      );
 }
  
-export default about;
+export default Password;
