@@ -2,8 +2,11 @@ import React from "react";
 
 const Password = () => {
     return ( 
-        <div>
-            <h1>hello welcome to about section</h1>
+        <div className="flex justify-center items-center">
+            <div className="bg-amber-50">
+                <h1>Password change</h1>
+            </div>
+            
         </div>
      );
 }
