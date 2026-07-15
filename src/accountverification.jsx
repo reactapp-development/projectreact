@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import emailjs from "@emailjs/browser";
 
-function Otp() {
+
+function AccountVerification() {
   const navigate = useNavigate();
    const [timeLeft, setTimeLeft] = useState(30);
 
@@ -12,7 +12,7 @@ function Otp() {
 
 
   const handleNext = async () => {
-    const storedOTP = sessionStorage.getItem("otp");
+    const storedOTP = sessionStorage.getItem("accountOTP");
 
     if (otp.trim() === storedOTP) {
         alert("OTP verification successful");
@@ -90,4 +90,4 @@ function Otp() {
   );
 }
 
-export default Otp;
+export default AccountVerification;

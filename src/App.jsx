@@ -6,6 +6,7 @@ import Account from './account.jsx'
 import Otp from './otp.jsx'
 import Password from './password.jsx'
 import Home from './home.jsx'
+import AccountVerification from "./accountverification.jsx";
 
 function App() {
    const router=createBrowserRouter([
@@ -32,6 +33,10 @@ function App() {
     {
       path:"/home",
       element:<Home/>
+    },
+    {
+      path:"/accountverification",
+      element:<AccountVerification/>
     }
     
   ])

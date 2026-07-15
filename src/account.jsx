@@ -17,7 +17,7 @@ const Account = () => {
          //OTP sent
       const sendOTP = async () => {
       const newOTP = generateOTP();
-      sessionStorage.setItem("otp", newOTP);
+      sessionStorage.setItem("accountOTP", newOTP);
       sessionStorage.setItem("email", email);
     
 
@@ -59,7 +59,7 @@ const Account = () => {
     console.log("OTP sent. Navigating...");
 
     if (success) {
-       navigate("/otp");
+       navigate("/accountverification");
     }
     };
 
