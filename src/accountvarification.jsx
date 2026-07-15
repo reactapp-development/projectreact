@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 function Otp() {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ function Otp() {
     if (otp.trim() === storedOTP) {
         alert("OTP verification successful");
 
-        navigate("/password");
+        navigate("/home");
 
     } else {
         alert("Invalid OTP");
@@ -78,7 +79,7 @@ function Otp() {
 
         <div className="text-center mt-5">
           <Link 
-            to="/forgot"
+            to="/account"
             className="underline text-blue-700">
             Change Email
           </Link>

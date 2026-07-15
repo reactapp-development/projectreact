@@ -5,6 +5,7 @@ import Forgot from './forgot.jsx'
 import Account from './account.jsx'
 import Otp from './otp.jsx'
 import Password from './password.jsx'
+import Home from './home.jsx'
 
 function App() {
    const router=createBrowserRouter([
@@ -27,6 +28,10 @@ function App() {
     {
       path:"/password",
       element:<Password/>
+    },
+    {
+      path:"/home",
+      element:<Home/>
     }
     
   ])

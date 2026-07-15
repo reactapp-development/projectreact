@@ -1,9 +1,67 @@
-
+import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
-const account = () => {
+const Account = () => {
+    const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+      const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+     //OTP Generation
+      const generateOTP = () => {
+      return Math.floor(100000 + Math.random() * 900000).toString();
+      };
+
+         //OTP sent
+      const sendOTP = async () => {
+      const newOTP = generateOTP();
+      sessionStorage.setItem("otp", newOTP);
+      sessionStorage.setItem("email", email);
+    
+
+    try {
+        await emailjs.send(
+            "service_ilkqcn9", //service id
+            "template_1d32ydh", //template
+            {
+                email: email,
+                otp: newOTP,
+            },
+            "06bXteaS3AvRsJZiv" //public key
+        );
+
+        alert("OTP sent successfully!");
+        return true;
+
+    } catch (error) {
+        alert("Failed to send OTP");
+        return false;
+    }
+    };
+
+
+
+  //email verification
+
+    const handleNext = async () => {
+
+    if (!isEmailValid) {
+        alert("Enter a valid email.");
+        return;
+    }
+
+    console.log("Sending OTP...");
+
+    const success = await sendOTP();
+
+    console.log("OTP sent. Navigating...");
+
+    if (success) {
+       navigate("/otp");
+    }
+    };
 
 
     return ( 
@@ -47,7 +105,9 @@ const account = () => {
                         <input className="border border-gray-500 p-2 rounded-lg mb-4" 
                         type="email"
                         required
-                        placeholder="Enter your Email"/>
+                        placeholder="Enter your Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     
                 </div>
@@ -77,7 +137,7 @@ const account = () => {
                 </div>
             </div>
             <div className="flex justify-center">
-                <button className="bg-black text-white px-15 rounded-xl active:bg-gray-700">Create Account</button>
+                <button className="bg-black text-white px-15 rounded-xl active:bg-gray-700" onClick={handleNext}>Create Account</button>
             </div>
             <div className=" flex justify-center mt-2 text-sm">
                 <h3>Already have an account?</h3>
@@ -93,4 +153,4 @@ const account = () => {
      );
 }
  
-export default account;
+export default Account;

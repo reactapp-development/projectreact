@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import Login from './login';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import emailjs from "@emailjs/browser";
@@ -10,25 +9,28 @@ function Forgot() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
       const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      
+      //OTP Generation
+      const generateOTP = () => {
+      return Math.floor(100000 + Math.random() * 900000).toString();
+      };
   
          //OTP sent
-    const sendOTP = async () => {
-    const newOTP = generateOTP();
-
-    //OTP Generation
-    sessionStorage.setItem("otp", newOTP);
-    sessionStorage.setItem("email", email);
+      const sendOTP = async () => {
+      const newOTP = generateOTP();
+      sessionStorage.setItem("otp", newOTP);
+      sessionStorage.setItem("email", email);
     
 
     try {
         await emailjs.send(
-            "service_ilkqcn9",
-            "template_1d32ydh",
+            "service_ilkqcn9", //service id
+            "template_1d32ydh", //template
             {
                 email: email,
                 otp: newOTP,
             },
-            "06bXteaS3AvRsJZiv"
+            "06bXteaS3AvRsJZiv" //public key
         );
 
         alert("OTP sent successfully!");
@@ -40,9 +42,9 @@ function Forgot() {
     }
     };
 
-    const generateOTP = () => {
-  return Math.floor(100000 + Math.random() * 900000).toString();
-};
+
+
+  //email verification
 
     const handleNext = async () => {
 

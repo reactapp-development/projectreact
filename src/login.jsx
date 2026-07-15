@@ -2,8 +2,10 @@ import React from "react";
 import Forgot from "./forgot";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login(){
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
     const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
@@ -11,6 +13,9 @@ function Login(){
     if (!isEmailValid) {
         alert("Enter a valid email.");
         return;
+    }
+    else {
+       navigate("/home");
     }};
   return(
     <div className="w-full h-screen bg-gray-800 flex justify-center items-center" >
@@ -18,13 +23,13 @@ function Login(){
       <div className="w-[80%] h-[80vh] bg-white flex justify-end items-center rounded-xl">
 
         <div className="flex justify-start rounded-xl w-[49%] h-[77vh] bg-linear-to-br from-gray-600 via-blue-300 to-gray-950">
-          <h1 className="m-6">Company Name</h1>
+          <h1 className="m-6">Hello User</h1>
         </div>
 
         <div 
         className=" w-[50%] h-[96vh] text-black">
           <div className="ml-6">
-            <h1 className="font-semibold font-[Poppins] text-2xl mt-20">Welcome Back!</h1>
+            <h1 className="font-semibold font-[Poppins] text-2xl mt-20 ">Welcome Back!</h1>
             <h2 className="text-lg">Log in to continue</h2>
           </div>
           <form>
@@ -34,7 +39,7 @@ function Login(){
             type="email"
             placeholder="Enter your email" 
             required
-            value={email}
+            
             onChange={(e) => setEmail(e.target.value)}/>
             </div>
             
