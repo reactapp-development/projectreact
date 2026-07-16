@@ -65,7 +65,7 @@ function Forgot() {
     };
   return (
     <div className='w-full h-screen flex justify-center items-center bg-linear-to-br from-gray-600 via-blue-300 to-gray-950'>
-      <div className=' bg-white/30 h-[50vh] w-[50%] rounded-xl text-black'>
+      <div className=' bg-white/30 h-[60vh] w-[40%] rounded-xl text-black py-10 px-15'>
       <div>
         <h1 className='text-xl mt-6 ml-6 font-semibold'>Forgot Password?</h1>
         <h2 className='ml-6 text-sm'>Please, write your email to receive an OTP </h2>
@@ -82,7 +82,7 @@ function Forgot() {
           <button className='bg-black px-25 rounded-xl active:bg-black/60 text-white'type="button" onClick={handleNext}>Get OTP</button>
         </div>
         <div className='ml-25 mt-6'>
-          <Link to='/' className='underline pt-2 active:text-green-700'>Go back to login page</Link>
+          <Link to='/login' className='underline pt-2 active:text-green-700'>Go back to login page</Link>
         </div>
           
 

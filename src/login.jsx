@@ -20,14 +20,14 @@ function Login(){
   return(
     <div className="w-full h-screen bg-gray-800 flex justify-center items-center" >
       
-      <div className="w-[80%] h-[80vh] bg-white flex justify-end items-center rounded-xl">
+      <div className="w-[60%] h-[80vh] bg-white flex justify-end items-center rounded-xl">
 
         <div className="flex justify-start rounded-xl w-[49%] h-[77vh] bg-linear-to-br from-gray-600 via-blue-300 to-gray-950">
-          <h1 className="m-6">Hello User</h1>
+          <h1 className="m-6">AstroLink</h1>
         </div>
 
         <div 
-        className=" w-[50%] h-[96vh] text-black">
+        className=" w-[50%] h-full text-black">
           <div className="ml-6">
             <h1 className="font-semibold font-[Poppins] text-2xl mt-20 ">Welcome Back!</h1>
             <h2 className="text-lg">Log in to continue</h2>

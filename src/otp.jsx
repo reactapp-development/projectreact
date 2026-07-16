@@ -35,18 +35,18 @@ function Otp() {
 }, [timeLeft]);
   return (
     <div className="w-full h-screen flex justify-center items-center bg-linear-to-br from-gray-600 via-blue-300 to-gray-950">
-      <div className="bg-white/30 w-[50%] rounded-xl text-black p-8">
+      <div className="bg-white/30 w-[40%] rounded-xl text-black p-8 ">
         
         <div>
-          <h1 className="text-xl font-semibold">
+          <h1 className="text-xl font-semibold flex justify-center">
             Verify OTP
           </h1>
-          <h2 className="text-sm mt-2">
+          <h2 className="text-sm mt-4 px-5">
             Enter the OTP sent to your email
           </h2>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-6 px-10">
           <label className="font-semibold text-sm">
             OTP
           </label>

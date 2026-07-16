@@ -7,12 +7,31 @@ import Otp from './otp.jsx'
 import Password from './password.jsx'
 import Home from './home.jsx'
 import AccountVerification from "./accountverification.jsx";
+import Contact from './contact.jsx'
+import Navbar from './navbar.jsx'
+import About from './about.jsx'
 
 function App() {
    const router=createBrowserRouter([
     {
       path:"/",
-      element:<Login/>
+      element:<><Navbar/><Home/></>
+    },
+    {
+      path:"/about",
+      element:<><Navbar/><About/></>
+    },
+    {
+      path:"/login",
+      element:<><Navbar/><Login/></>
+    },
+    {
+      path:"/home",
+      element:<><Navbar/><Home/></>
+    },
+    {
+      path:"/contact",
+      element:<><Navbar/><Contact/></>
     },
     {
       path:"/forgot",
@@ -31,13 +50,10 @@ function App() {
       element:<Password/>
     },
     {
-      path:"/home",
-      element:<Home/>
-    },
-    {
       path:"/accountverification",
       element:<AccountVerification/>
-    }
+    },
+    
     
   ])
   return (

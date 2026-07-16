@@ -65,7 +65,7 @@ const Account = () => {
 
 
     return ( 
-        <div className="flex justify-center items-center h-screen m-full bg-linear-to-br from-gray-600 via-blue-300 to-gray-950 text-black" >
+        <div className="flex justify-center items-center h-screen m-fullbg-linear-to-br from-gray-600 via-blue-300 to-gray-950 text-black " >
             <div className=" p-6 rounded-2xl bg-white/20 backdrop-blur-lg w-[50%]">
             <div >
                 <h1 className=" font-semibold text-xl">

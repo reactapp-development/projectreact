@@ -2,17 +2,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const navbar = () => {
+const Navbar = () => {
     return ( 
-    <nav className="flex justify-between items-center bg-liear-to-r from-blue-400 to-black p-2">
-        <h1 className="text-xl">Company Name</h1>
+        <div>
+            <nav className="flex justify-between items-center absolute top-0 left-0 z-50 w-full h-[10vh] bg-white/30 backdrop-blur-lg p-2 shadow-2xl">
+        <h1 className="text-xl">AstroLink</h1>
                  <div className="flex gap-6">
-                <Link to="/">Home</Link>
-                <Link to="/Login">Login</Link>
+                <Link to="/">Home</Link>            
+                <Link to="/about">About</Link>            
                 <Link to="/Contact">Contact</Link>
+                <Link to="/Login">Login</Link>
                 </div>
     </nav>
+        </div>
+    
      );
 }
  
-export default navbar;
+export default Navbar;
