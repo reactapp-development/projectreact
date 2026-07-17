@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import india from "./assets/india.jpg";
 import japan from "./assets/japan.jpg";
@@ -93,7 +93,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="min-h-screen px-[8%] py-[10vh] text-white bg-[#08111f]">
+      <div className=" px-[8%] py-[10vh] text-white bg-[#08111f]">
         <div className="flex items-end justify-between">
           <div>
 
@@ -123,15 +123,7 @@ const Home = () => {
             <img
               src={india}
               alt="India"
-              className="object-cover w-full h-[65vh] transition duration-700 group-hover:scale-110"
-            />
-
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(8,17,31,1), rgba(8,17,31,0.35), transparent)",
-              }}
+              className="object-cover w-full h-full transition duration-700 group-hover:scale-110 opacity-70 "
             />
 
             <div className="absolute bottom-0 left-0 w-full p-[5%]">
@@ -147,15 +139,7 @@ const Home = () => {
             <img
               src={japan}
               alt="Japan"
-              className="object-cover w-full h-[65vh] transition duration-700 group-hover:scale-110"
-            />
-
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(8,17,31,1), rgba(8,17,31,0.35), transparent)",
-              }}
+              className="object-cover w-full h-full transition duration-700 group-hover:scale-110 opacity-70"
             />
 
             <div className="absolute bottom-0 left-0 w-full p-[5%]">
@@ -172,16 +156,9 @@ const Home = () => {
             <img
               src={france}
               alt="France"
-              className="object-cover w-full h-[65vh] transition duration-700 group-hover:scale-110"
+              className="object-cover w-full h-full transition duration-700 group-hover:scale-110 opacity-70"
             />
 
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(8,17,31,1), rgba(8,17,31,0.35), transparent)",
-              }}
-            />
 
             <div className="absolute bottom-0 left-0 w-full p-[5%]">
               <h2 className="text-[2vw] font-bold text-white">
@@ -195,7 +172,16 @@ const Home = () => {
         </div>
 
       </div>
-      
+      <div>
+            <div>
+              <h1 className=" text-5xl font-extrabold flex justify-center p-8">Our Users</h1>
+              <div className="flex justify-between">
+              <div className="flex  p-20 border border-white rounded-2xl m-20 h-[5vh] w-[30%]">hello</div>
+              <div className="flex  p-20 border border-white rounded-2xl m-20 h-[5vh] w-[30%]">user</div>
+              <div className="flex  p-20 border border-white rounded-2xl m-20 h-[5vh] w-[30%]">hello</div>
+              </div>
+            </div>
+          </div>
     </div>
   );
 };

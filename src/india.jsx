@@ -1,5 +1,9 @@
 import React from "react";
 import india from "./assets/india.jpg";
+import red from "./assets/red.jpg";
+import taj from "./assets/taj.jpg";
+import golden from "./assets/golden.jpg";
+import hawa from "./assets/hawa.jpg";
 
 const India = () => {
   return (
@@ -75,6 +79,64 @@ const India = () => {
         </div>
 
       </div>
+      <div className="min-h-screen w-full">
+      <div>
+        <div className="flex justify-center text-2xl font-extrabold m-10">
+            <h1>Famous Places Gallery</h1>
+        </div >
+        <div className="flex justify-between">
+        <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+          
+          <img
+           src={india}
+            alt="India"
+            className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+          />
+          
+        </div>
+        <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+          <img
+           src={red}
+            alt="Red fort"
+            className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+          />
+        </div>
+         <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+          <img
+           src={taj}
+            alt="Taj mahal"
+            className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+          />
+        </div>
+        </div>
+
+        <div className="flex justify-between">
+          <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+          <img
+           src={taj}
+            alt="Taj mahal"
+            className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+          />
+          </div>
+          <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+          <img
+           src={golden}
+            alt="Golden temple"
+            className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+          />
+          </div>
+          <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+          <img
+           src={hawa}
+            alt="Golden temple"
+            className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+          />
+          </div>
+        </div>
+
+      </div>
+      </div>
+
 
     </div>
   );
