@@ -1,114 +1,202 @@
-import React from "react";
-import {motion} from "framer-motion";
-import mountain from "./assets/mountain.jpg";
-import images1 from "./assets/images1.jpg"
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import india from "./assets/india.jpg";
+import japan from "./assets/japan.jpg";
+import bgImage from "./assets/images.jpg";
+import france from "./assets/france.jpg"
 
 const Home = () => {
+  const [slide, setSlide] = useState(0);
+  const slides = [
+  {
+    image: bgImage,
+    title: "Explore the World",
+    subtitle: "Where Every Journey Begins",
+    description:
+      "From hidden gems to iconic landmarks, we help you plan every step of your perfect journey.",
+  },
+  {
+    image: india,
+    title: "Discover India",
+    subtitle: "Culture Meets Adventure",
+    description:
+      "Experience ancient history, beautiful landscapes, and unforgettable traditions.",
+  },
+  {
+    image: japan,
+    title: "Visit Japan",
+    subtitle: "Tradition Meets Technology",
+    description:
+      "Explore temples, cities, mountains, and unique Japanese experiences.",
+  },
+];
   return (
-<div>
-
-    
-    <div className="w-full h-screen bg-linear-to-br from-gray-600 via-blue-300 to-gray-950 text-black relative overflow-hidden">
-
+    <div className="bg-[#08111f] min-h-screen">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
+        className="relative flex items-center justify-center w-full h-screen overflow-hidden"
         style={{
-          backgroundImage: 'url("/src/assets/images.jpg")',
+          backgroundImage: `linear-gradient(to bottom, rgba(80,120,180,0.35), rgba(8,17,31,0.95)), url(${slides[slide].image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
-      ></div>
-
-      <div className="relative z-10 h-full flex flex-col justify-center items-center"
       >
-
-
-    <div className="text-5xl font-bold">
-        <motion.h1
-            initial={{ opacity: 0, y: -200 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-             duration: 1,
-             ease: "easeOut"
-             }}    
-        >
-            Explore the world
+        <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+          <div className="text-center">
+            <motion.h1
+              className="text-[5vw] font-extrabold text-white"
+              initial={{ opacity: 0, y: "-20vh" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1 }}
+            >
+              {slides[slide].title}
             </motion.h1>
-        
-        <motion.h1
-            initial={{ opacity: 0, y: -200 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-             duration: 1,
-             ease: "easeOut"
-             
-             }}  
-             className="bg-linear-to-r from-green-950 to-blue-500 bg-clip-text text-transparent px-20 py-2"  
-        >
-            Where Every Journey begins
-            </motion.h1>  
-    </div>
 
+            <motion.h1
+              className="py-[2vh] text-[5vw] font-extrabold text-[#79b8ff]"
+              initial={{ opacity: 0, y: "-20vh" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1, delay: 0.2 }}
+            >
+              {slides[slide].subtitle}
+            </motion.h1>
+          </div>
 
-    <div className="w-150 m-10 text-center">
-        <motion.h2
-            initial={{ opacity: 0, y: 200 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-             duration: 1,
-             ease: "easeOut"
-             }}    
-        >
-            From  hidden gems to  iconic landmarks, we help  you plan every step of your perfect journey.
-            </motion.h2>
-    </div>
-
-        
-      </div>
-</div>
-
-
-      <div className="w-full h-screen 
-      bg-linear-to-br from-gray-600 via-blue-300 to-gray-950 
-      text-black">
-
-
-      <div className="flex justify-between">
-        <div className="pt-20 pl-20">
-            <p>Next place</p>
-            <h1 className="text-5xl font-bold ">Traveling Destinations</h1>
-        </div>
-        <div className="pt-36 pr-36 ">
-            <h3>Explore high-resolution telemetry data from our furthest outposts and upcoming colonization sites.</h3>
+          <motion.p
+            className="w-[45%] mt-[5vh] text-center text-[1.2vw] text-gray-200"
+            initial={{ opacity: 0, y: "15vh" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+          >
+            {slides[slide].description}
+          </motion.p>
+          <button
+          onClick={() =>
+          setSlide((slide + 1) % slides.length)
+           }
+           className="absolute right-[5%] text-5xl text-white z-20"
+          >
+           →
+          </button>
+          <button
+            onClick={() =>
+              setSlide((slide - 1 + slides.length) % slides.length)
+            }
+            className="absolute left-[5%] z-20 text-5xl text-white cursor-pointer"
+          >
+            ←
+          </button>
         </div>
       </div>
-      <div  className="pl-20 pt-10  ">
-        <div className="relative flex justify-between">
 
-        <img src={mountain}
-         alt="Mountain"
-         className="h-[56vh] object-cover rounded-2xl transition-transform duration-500 hover:scale-110 opacity-80"/>
+      <div className="min-h-screen px-[8%] py-[10vh] text-white bg-[#08111f]">
+        <div className="flex items-end justify-between">
+          <div>
 
-         <div className="absolute bottom-6 left-6  text-white ">
-
-          <h2 className="text-2xl font-bold">Mountain and a lake</h2>
-          <p className="w-100 pt-4 font-semibold">This is a scenery of a mountain and a lake very beautiful and pretty located in.</p>
+            <motion.h1
+            className="text-[4vw] font-bold"
+            initial={{ opacity: 0, x: "-15vh" }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
+          >
+            Popular Tours
+          </motion.h1>
 
           </div>
-          
-            <img src={images1}
-         alt="Mountain"
-         className="h-[56vh] object-cover rounded-2xl transition-transform duration-500 hover:scale-110 opacity-80"/>
-         <div className="absolute bottom-6 left-6  text-white ">
 
-          <h2 className="text-2xl font-bold">Mountain and a lake</h2>
-          <p className="w-100 pt-4 font-semibold">This is a scenery of a mountain and a lake very beautiful and pretty located in.</p>
+          <p className="w-[50%] text-gray-300">
+            Explore breathtaking destinations carefully selected for unforgettable
+            adventures, incredible landscapes, and memorable experiences.
+          </p>
+        </div>
 
-          
+         
+        <div className="flex gap-8 mt-[8vh]">
+
+          <Link to="/india" className="block w-[30%]">
+          <div className="relative overflow-hidden rounded-[2%] group h-[40vh] cursor-point">
+            <img
+              src={india}
+              alt="India"
+              className="object-cover w-full h-[65vh] transition duration-700 group-hover:scale-110"
+            />
+
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(8,17,31,1), rgba(8,17,31,0.35), transparent)",
+              }}
+            />
+
+            <div className="absolute bottom-0 left-0 w-full p-[5%]">
+              <h2 className="text-[2vw] font-bold text-white">
+                India
+              </h2>
+            </div>
           </div>
-         </div>
-      </div>
+          </Link>
+
+          <Link to="/japan" className="block  w-[30%]">
+          <div className="relative overflow-hidden rounded-[2%] group h-[40vh] cursor-pointer">
+            <img
+              src={japan}
+              alt="Japan"
+              className="object-cover w-full h-[65vh] transition duration-700 group-hover:scale-110"
+            />
+
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(8,17,31,1), rgba(8,17,31,0.35), transparent)",
+              }}
+            />
+
+            <div className="absolute bottom-0 left-0 w-full p-[5%]">
+              <h2 className="text-[2vw] font-bold text-white">
+                Japan
+              </h2>
+
+            </div>
+          </div>
+          </Link>
+
+          <Link to="/france" className="block w-[30%]">
+          <div className="relative overflow-hidden rounded-[2%] group h-[40vh]">
+            <img
+              src={france}
+              alt="France"
+              className="object-cover w-full h-[65vh] transition duration-700 group-hover:scale-110"
+            />
+
+            <div
+              className="absolute inset-0"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(8,17,31,1), rgba(8,17,31,0.35), transparent)",
+              }}
+            />
+
+            <div className="absolute bottom-0 left-0 w-full p-[5%]">
+              <h2 className="text-[2vw] font-bold text-white">
+                France
+              </h2>
+
+            </div>
+          </div>
+          </Link>
+
+        </div>
 
       </div>
-  </div>  
+      
+    </div>
   );
 };
 

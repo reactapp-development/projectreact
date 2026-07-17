@@ -10,6 +10,9 @@ import AccountVerification from "./accountverification.jsx";
 import Contact from './contact.jsx'
 import Navbar from './navbar.jsx'
 import About from './about.jsx'
+import India from './india.jsx'
+import Japan from './japan.jsx'
+import France from './france.jsx'
 
 function App() {
    const router=createBrowserRouter([
@@ -53,6 +56,18 @@ function App() {
       path:"/accountverification",
       element:<AccountVerification/>
     },
+    {
+      path:"/india",
+      element:<India/>
+    },
+    {
+      path:"/japan",
+      element:<Japan/>
+    },
+    {
+      path:"/france",
+      element:<France/>
+    }
     
     
   ])
