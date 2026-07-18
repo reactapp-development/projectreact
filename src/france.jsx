@@ -93,14 +93,14 @@ const Japan = () => {
               <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
                 <img
                  src={r}
-                  alt="Red fort"
+                  alt="img"
                   className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
                 />
               </div>
                <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
                 <img
                  src={a}
-                  alt="Taj mahal"
+                  alt="img"
                   className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
                 />
               </div>
@@ -110,21 +110,21 @@ const Japan = () => {
                 <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
                 <img
                  src={n}
-                  alt="Taj mahal"
+                  alt="img"
                   className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
                 />
                 </div>
                 <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
                 <img
                  src={c}
-                  alt="Golden temple"
+                  alt="img"
                   className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
                 />
                 </div>
                 <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
                 <img
                  src={e}
-                  alt="Golden temple"
+                  alt="img"
                   className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
                 />
                 </div>

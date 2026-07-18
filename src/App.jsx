@@ -13,6 +13,7 @@ import About from './about.jsx'
 import India from './india.jsx'
 import Japan from './japan.jsx'
 import France from './france.jsx'
+import Destination from './destination.jsx'
 
 function App() {
    const router=createBrowserRouter([
@@ -67,6 +68,10 @@ function App() {
     {
       path:"/france",
       element:<France/>
+    },
+    {
+      path:"/destination",
+      element:<Destination/>
     }
     
     

@@ -141,7 +141,7 @@ const Account = () => {
             </div>
             <div className=" flex justify-center mt-2 text-sm">
                 <h3>Already have an account?</h3>
-                <Link to='/' className="text-blue-700 active:text-purple-600 mb-5">Login</Link>
+                <Link to='/login' className="text-blue-700 active:text-purple-600 mb-5">Login</Link>
             </div>
                 
              </div>

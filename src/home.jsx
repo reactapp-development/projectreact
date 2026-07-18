@@ -1,35 +1,85 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import india from "./assets/india.jpg";
 import japan from "./assets/japan.jpg";
 import bgImage from "./assets/images.jpg";
 import france from "./assets/france.jpg"
-import  "animate.css";
+import j from "./assets/j.jpg"
 
 const Home = () => {
   const [slide, setSlide] = useState(0);
-  const slides = [
+  const [reviewIndex, setReviewIndex] = useState(0);
+
+const slides = [
   {
     image: bgImage,
     title: "Explore the World",
     subtitle: "Where Every Journey Begins",
     description:
-      "From hidden gems to iconic landmarks, we help you plan every step of your perfect journey.",
+      "From hidden gems to iconic landmarks, we help you plan every step of your perfect journey. Explore new cultures, discover beautiful places, and create memories that last a lifetime.",
   },
   {
     image: india,
     title: "Discover India",
     subtitle: "Culture Meets Adventure",
     description:
-      "Experience ancient history, beautiful landscapes, and unforgettable traditions.",
+      "Experience ancient history, beautiful landscapes, and unforgettable traditions. Discover rich cultures, stunning places, and memorable adventures across India.",
   },
   {
     image: japan,
     title: "Visit Japan",
     subtitle: "Tradition Meets Technology",
     description:
-      "Explore temples, cities, mountains, and unique Japanese experiences.",
+      "Explore temples, cities, mountains, and unique Japanese experiences. Experience Japan's rich culture, stunning landscapes, and the harmony between tradition and technology.",
+  },
+];
+
+  useEffect(() => {
+  const slideInterval = setInterval(() => {
+    setSlide((prev) => (prev + 1) % slides.length);
+  }, 5000);
+
+  return () => clearInterval(slideInterval);
+}, []);
+
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setReviewIndex((prev) => (prev + 1) % reviews.length);
+  }, 3000);
+
+  return () => clearInterval(interval);
+}, []);
+  
+const reviews = [
+  {
+    text: "An unparalleled level of service. Our trip to Japan was meticulously planned, blending traditional stays with cutting-edge experiences.",
+    name: "Rohan Sharma",
+    role: "Venture Partner",
+    image: j,
+    rating: 5,
+  },
+  {
+    text: "It handles the complexity so I can enjoy the serenity. Their hidden-gem recommendations are truly world-class.",
+    name: "Krish Gusain",
+    role: "Interior Architect",
+    image: india,
+    rating: 4,
+  },
+  {
+    text: "From private jets to exclusive museum entries, Travelly made our anniversary expedition unforgettable.",
+    name: "Shirshika Pandey",
+    role: "Tech Executive",
+    image: france,
+    rating: 5,
+  },
+  {
+    text: "Amazing travel planning with unforgettable experiences.",
+    name: "Rajnath Singh",
+    role: "Photographer",
+    image: japan,
+    rating: 3,
   },
 ];
   return (
@@ -44,52 +94,80 @@ const Home = () => {
         }}
       >
         <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
-          <div className="text-center">
-            <motion.h1
-              className="text-[5vw] font-extrabold text-white"
-              initial={{ opacity: 0, y: "-20vh" }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 1 }}
-            >
-              {slides[slide].title}
-            </motion.h1>
+          <AnimatePresence mode="wait">
 
-            <motion.h1
-              className="py-[2vh] text-[5vw] font-extrabold text-[#79b8ff]"
-              initial={{ opacity: 0, y: "-20vh" }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              {slides[slide].subtitle}
-            </motion.h1>
-          </div>
+  <motion.div
+    key={slide}
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    
+    transition={{
+      duration: 0.8,
+      ease: "easeOut"
+    }}
+    className="flex flex-col items-center"
+  >
 
-          <motion.p
-            className="w-[45%] mt-[5vh] text-center text-[1.2vw] text-gray-200"
-            initial={{ opacity: 0, y: "15vh" }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 1 }}
-          >
-            {slides[slide].description}
-          </motion.p>
+    <div className="text-center">
+
+      <motion.h1
+        className="text-[5vw] font-extrabold text-white hover:text-[#d6d450] "
+        initial={{ opacity: 0, y: "-20vh" }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: "-20vh" }}
+        transition={{
+          duration: 0.8,
+          delay: 0.1
+        }}
+      >
+        {slides[slide].title}
+      </motion.h1>
+
+
+      <motion.h1
+        className="py-[2vh] text-[5vw] font-extrabold text-[#79b8ff] hover:text-[#ffb703]"
+        initial={{ opacity: 0, y: "-20vh" }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: "-20vh" }}
+        transition={{
+          duration: 0.8,
+          delay: 0
+        }}
+      >
+        {slides[slide].subtitle}
+      </motion.h1>
+
+    </div>
+
+
+    <motion.p
+      className="w-[60%] mt-[10vh] text-center text-[1.2vw] text-gray-200"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 50 }}
+      transition={{
+        duration: 0.8,
+        delay: 0
+      }}
+    >
+      {slides[slide].description}
+    </motion.p>
+
+
+  </motion.div>
+
+</AnimatePresence>
           <button
-          onClick={() =>
-          setSlide((slide + 1) % slides.length)
-           }
-           className="absolute right-[5%] text-5xl text-white z-20"
+            onClick={() => setSlide((slide + 1) % slides.length)}
+            className="absolute right-[5%] z-20 w-14 h-14 rounded-full bg-white/20 hover:bg-white/40 flex items-center justify-center transition"
           >
-           →
+            <span className="w-4 h-4 border-r-4 border-t-4 border-white rotate-45"></span>
           </button>
           <button
-            onClick={() =>
-              setSlide((slide - 1 + slides.length) % slides.length)
-            }
-            className="absolute left-[5%] z-20 text-5xl text-white cursor-pointer"
+            onClick={() => setSlide((slide - 1 + slides.length) % slides.length)}
+            className="absolute left-[5%] z-20 w-14 h-14 rounded-full bg-white/20 hover:bg-white/40 flex  items-center justify-center transition"
           >
-            ←
+            <span className="w-4 h-4 border-l-4 border-b-4 border-white rotate-45"></span>
           </button>
         </div>
       </div>
@@ -110,10 +188,16 @@ const Home = () => {
 
           </div>
 
-          <p className="w-[50%] text-gray-300">
+          <motion.p
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+          className="w-[40%] text-gray-300"
+          >
             Explore breathtaking destinations carefully selected for unforgettable
             adventures, incredible landscapes, and memorable experiences.
-          </p>
+          </motion.p>
         </div>
 
          
@@ -128,7 +212,7 @@ const Home = () => {
             />
 
             <div className="absolute bottom-0 left-0 w-full p-[5%]">
-              <h2 className="text-[2vw] font-bold text-white">
+              <h2 className="text-lg font-semibold text-white">
                 India
               </h2>
             </div>
@@ -144,7 +228,7 @@ const Home = () => {
             />
 
             <div className="absolute bottom-0 left-0 w-full p-[5%]">
-              <h2 className="text-[2vw] font-bold text-white">
+              <h2 className="text-lg font-semibold text-white">
                 Japan
               </h2>
 
@@ -162,67 +246,93 @@ const Home = () => {
 
 
             <div className="absolute bottom-0 left-0 w-full p-[5%]">
-              <h2 className="text-[2vw] font-bold text-white">
+              <h2 className="text-lg font-semibold text-white">
                 France
               </h2>
 
             </div>
+            
           </div>
+          </Link>
+          <Link to="/destination">
+            <button
+              className="absolute right-[5%] z-20 bg-white/20 hover:bg-[#ffb703] 
+              w-14 h-14 rounded-full text-white text-3xl transition mt-25"
+            >
+              ❯
+            </button>
           </Link>
 
         </div>
+        
 
       </div>
       <div>
             <div>
-              <h1 className=" text-5xl font-extrabold flex justify-center p-8 ">Our Users</h1>
-              <div className="flex justify-between">
-                
-              <div className=" px-4 py-4 border border-white rounded-2xl m-10 w-[50%] italic">"An unparalleled level of service. Our trip to Japan was meticulously planned. blending traditional stays with cutting-edge experiences."
-                <div className="flex">
-                <div>
-                  <img src={japan} 
-                  alt="user1" 
-                  className="w-9 h-9 rounded-full mt-4"/>
-                </div>
+  <motion.h1
+   className="text-5xl font-extrabold flex justify-center p-8"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 1 }}
+   >
+    Our Users
+  </motion.h1>
 
-                <div className="not-italic ml-4">
-                  <h1 className="pt-4 ">Julian Thorne</h1>
-                  <p>Venture Partner</p>
-                </div>
-                </div>
-              </div>
-              <div className=" px-4 py-4 border border-white rounded-2xl m-10 w-[50%] italic">" It handles the complexity so i can enjoy the serenity. Their hidden-gem recommendations are truly world-class."
-                <div className="flex">
-                <div>
-                  <img src={india} 
-                  alt="user1" 
-                  className="w-9 h-9 rounded-full mt-4"/>
-                </div>
+  <div className="flex justify-between overflow-hidden">
 
-                <div className="not-italic ml-4">
-                  <h1 className="pt-4 ">Elena Rossi</h1>
-                  <p>Interior Architect</p>
-                </div>
-                </div>
-              </div>
-              <div className=" px-4 py-4 border border-white rounded-2xl m-10 w-[50%] italic">"From private jets to exclusive museum entries, Travelly made our anniversary expedition unforgettable."
-                <div className="flex">
-                <div>
-                  <img src={france} 
-                  alt="user1" 
-                  className="w-9 h-9 rounded-full mt-4"/>
-                </div>
+    {[0,1,2].map((item) => {
+      const current =
+        reviews[(reviewIndex + item) % reviews.length];
 
-                <div className="not-italic ml-4">
-                  <h1 className="pt-4 ">Marcus Chen</h1>
-                  <p>Tech Executive</p>
-                </div>
-                </div>
-              </div>
-              </div>
-            </div>
+      return (
+        <motion.div
+        key={`${reviewIndex}-${item}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+        duration: 0.8,
+        ease: "easeInOut"
+        }}
+        className="px-4 py-4 border border-white rounded-2xl m-10 w-[30%] italic"
+>
+
+          <div className="text-yellow-400 text-xl">
+            {"★".repeat(current.rating)}
+            {"☆".repeat(5 - current.rating)}
           </div>
+
+          <p className="mt-3">
+            "{current.text}"
+          </p>
+
+          <div className="flex mt-5">
+
+            <img
+              src={current.image}
+              alt="user"
+              className="w-9 h-9 rounded-full object-cover"
+            />
+
+            <div className="not-italic ml-4">
+              <h1>{current.name}</h1>
+              <p>{current.role}</p>
+            </div>
+
+          </div>
+
+        </motion.div>
+      );
+    })}
+
+  </div>
+</div>
+          </div>
+          <footer >
+            <div>
+              contact me
+            </div>
+          </footer>
     </div>
   );
 };
