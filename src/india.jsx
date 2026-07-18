@@ -4,6 +4,7 @@ import red from "./assets/red.jpg";
 import taj from "./assets/taj.jpg";
 import golden from "./assets/golden.jpg";
 import hawa from "./assets/hawa.jpg";
+import lotus from "./assets/lotus.jpg";
 
 const India = () => {
   return (
@@ -103,8 +104,8 @@ const India = () => {
         </div>
          <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
           <img
-           src={taj}
-            alt="Taj mahal"
+           src={lotus}
+            alt="lotus temple"
             className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
           />
         </div>

@@ -1,5 +1,11 @@
 import React from "react";
 import japan from "./assets/japan.jpg";
+import j from "./assets/j.jpg";
+import p from "./assets/p.jpg";
+import temp from "./assets/temp.jpg";
+import japanz from "./assets/japanz.jpg";
+import tokyo from "./assets/tokyo.jpg";
+import spring from "./assets/spring.jpg";
 const Japan = () => {
     return ( 
         <div className="min-h-screen bg-[#08111f] text-white">
@@ -67,11 +73,63 @@ const Japan = () => {
         </div>
 
       </div>
-      <div>
-        <div className="flex justify-center text-2xl font-extrabold">
-            <h1>Famous Places Gallery</h1>
-        </div>
-      </div>
+      <div className="min-h-screen w-full">
+            <div>
+              <div className="flex justify-center text-2xl font-extrabold m-10">
+                  <h1>Famous Places Gallery</h1>
+              </div >
+              <div className="flex justify-between">
+              <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+                
+                <img
+                 src={j}
+                  alt="India"
+                  className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+                />
+                
+              </div>
+              <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+                <img
+                 src={p}
+                  alt="Red fort"
+                  className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+                />
+              </div>
+               <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+                <img
+                 src={tokyo}
+                  alt="Taj mahal"
+                  className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+                />
+              </div>
+              </div>
+      
+              <div className="flex justify-between">
+                <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+                <img
+                 src={temp}
+                  alt="Taj mahal"
+                  className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+                />
+                </div>
+                <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+                <img
+                 src={spring}
+                  alt="Golden temple"
+                  className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+                />
+                </div>
+                <div className="relative overflow-hidden rounded-[2%] group w-[30%] h-[40vh] cursor-point m-5">
+                <img
+                 src={japanz}
+                  alt="Golden temple"
+                  className="object-cover w-full h-full transition duration-700 group-hover:scale-110"
+                />
+                </div>
+              </div>
+      
+            </div>
+            </div>
         </div>
      );
 }

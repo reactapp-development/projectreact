@@ -5,6 +5,7 @@ import india from "./assets/india.jpg";
 import japan from "./assets/japan.jpg";
 import bgImage from "./assets/images.jpg";
 import france from "./assets/france.jpg"
+import  "animate.css";
 
 const Home = () => {
   const [slide, setSlide] = useState(0);
@@ -174,11 +175,51 @@ const Home = () => {
       </div>
       <div>
             <div>
-              <h1 className=" text-5xl font-extrabold flex justify-center p-8">Our Users</h1>
+              <h1 className=" text-5xl font-extrabold flex justify-center p-8 ">Our Users</h1>
               <div className="flex justify-between">
-              <div className="flex  p-20 border border-white rounded-2xl m-20 h-[5vh] w-[30%]">hello</div>
-              <div className="flex  p-20 border border-white rounded-2xl m-20 h-[5vh] w-[30%]">user</div>
-              <div className="flex  p-20 border border-white rounded-2xl m-20 h-[5vh] w-[30%]">hello</div>
+                
+              <div className=" px-4 py-4 border border-white rounded-2xl m-10 w-[50%] italic">"An unparalleled level of service. Our trip to Japan was meticulously planned. blending traditional stays with cutting-edge experiences."
+                <div className="flex">
+                <div>
+                  <img src={japan} 
+                  alt="user1" 
+                  className="w-9 h-9 rounded-full mt-4"/>
+                </div>
+
+                <div className="not-italic ml-4">
+                  <h1 className="pt-4 ">Julian Thorne</h1>
+                  <p>Venture Partner</p>
+                </div>
+                </div>
+              </div>
+              <div className=" px-4 py-4 border border-white rounded-2xl m-10 w-[50%] italic">" It handles the complexity so i can enjoy the serenity. Their hidden-gem recommendations are truly world-class."
+                <div className="flex">
+                <div>
+                  <img src={india} 
+                  alt="user1" 
+                  className="w-9 h-9 rounded-full mt-4"/>
+                </div>
+
+                <div className="not-italic ml-4">
+                  <h1 className="pt-4 ">Elena Rossi</h1>
+                  <p>Interior Architect</p>
+                </div>
+                </div>
+              </div>
+              <div className=" px-4 py-4 border border-white rounded-2xl m-10 w-[50%] italic">"From private jets to exclusive museum entries, Travelly made our anniversary expedition unforgettable."
+                <div className="flex">
+                <div>
+                  <img src={france} 
+                  alt="user1" 
+                  className="w-9 h-9 rounded-full mt-4"/>
+                </div>
+
+                <div className="not-italic ml-4">
+                  <h1 className="pt-4 ">Marcus Chen</h1>
+                  <p>Tech Executive</p>
+                </div>
+                </div>
+              </div>
               </div>
             </div>
           </div>
