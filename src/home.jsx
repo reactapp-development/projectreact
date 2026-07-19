@@ -201,9 +201,9 @@ const reviews = [
         </div>
 
          
-        <div className="flex gap-8 mt-[8vh]">
+        <div className="flex gap-8 mt-[8vh] overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4">
 
-          <Link to="/india" className="block w-[30%]">
+          <Link to="/india" className="min-w-80 shrink-0">
           <div className="relative overflow-hidden rounded-[2%] group h-[40vh] cursor-point">
             <img
               src={india}
@@ -219,7 +219,7 @@ const reviews = [
           </div>
           </Link>
 
-          <Link to="/japan" className="block  w-[30%]">
+          <Link to="/japan" className="min-w-80 shrink-0">
           <div className="relative overflow-hidden rounded-[2%] group h-[40vh] cursor-pointer">
             <img
               src={japan}
@@ -236,7 +236,7 @@ const reviews = [
           </div>
           </Link>
 
-          <Link to="/france" className="block w-[30%]">
+          <Link to="/france" className="min-w-80 shrink-0">
           <div className="relative overflow-hidden rounded-[2%] group h-[40vh]">
             <img
               src={france}
@@ -328,11 +328,72 @@ const reviews = [
   </div>
 </div>
           </div>
-          <footer >
-            <div>
-              contact me
-            </div>
-          </footer>
+          <footer className="bg-[#0a1628] text-white mt-20">
+  <div className="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    {/* Logo/About */}
+    <div>
+      <h2 className="text-2xl font-bold text-[#79b8ff]">
+        Travelly
+      </h2>
+      <p className="mt-4 text-gray-400">
+        Explore breathtaking destinations and create unforgettable
+        memories with Travelly.
+      </p>
+    </div>
+
+    {/* Quick Links */}
+    <div>
+      <h3 className="text-lg font-semibold mb-4">
+        Quick Links
+      </h3>
+      <ul className="space-y-2 text-gray-400">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/destination">Destinations</Link></li>
+        <li><Link to="/india">India</Link></li>
+        <li><Link to="/japan">Japan</Link></li>
+      </ul>
+    </div>
+
+    {/* Contact */}
+    <div>
+      <h3 className="text-lg font-semibold mb-4">
+        Contact
+      </h3>
+
+      <p className="text-gray-400">
+        📧 travelly@email.com
+      </p>
+
+      <p className="text-gray-400 mt-2">
+        📞 +91 98765 43210
+      </p>
+
+      <p className="text-gray-400 mt-2">
+        📍 Patiala, Punjab
+      </p>
+    </div>
+
+    {/* Social */}
+    <div>
+      <h3 className="text-lg font-semibold mb-4">
+        Follow Us
+      </h3>
+
+      <div className="flex gap-4 text-2xl">
+        <a href="#">🌐</a>
+        <a href="#">📘</a>
+        <a href="#">📷</a>
+        <a href="#">🐦</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div className="border-t border-gray-700 py-6 text-center text-gray-500">
+    © {new Date().getFullYear()} Travelly. All rights reserved.
+  </div>
+</footer>
     </div>
   );
 };
