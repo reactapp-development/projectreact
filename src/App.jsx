@@ -17,9 +17,13 @@ import Korea from './korea.jsx'
 import Switzerland from './switzerland.jsx'
 import Destination from './destination.jsx'
 import Thailand from './thailand.jsx'
+import ScrollToTop from "./scrolltotop.jsx";
 
 function App() {
    const router=createBrowserRouter([
+    {
+    element: <ScrollToTop />,
+    children: [
     {
       path:"/",
       element:<><Navbar/><Home/></>
@@ -90,7 +94,7 @@ function App() {
     },
 
     
-    
+   ]}
   ])
   return (
     <div>

@@ -64,7 +64,7 @@ const Destination = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 1 }}
-         className="text-5xl py-10 font-bold hover:text-yellow-300 mt-15">
+         className="text-5xl py-10 font-bold text-blue-400 hover:text-yellow-300 mt-15">
           Explore Our Destinations
         </motion.h1>
 
@@ -113,6 +113,35 @@ const Destination = () => {
         ))}
 
       </div>
+      <footer class="bg-gray-900 text-white py-8 mt-10">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 class="text-xl font-semibold mb-3">Contact Us</h3>
+
+    <p class="text-gray-300 mb-2">
+      Email:
+      <a href="#" class="text-blue-400 hover:underline">
+        hello@gmail.com
+      </a>
+    </p>
+
+    <p class="text-gray-300 mb-4">
+      Phone:
+      <a href="#" class="text-blue-400 hover:underline">
+        +1 234 567 890
+      </a>
+    </p>
+
+    <div class="flex justify-center gap-5 mb-4">
+      <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+      <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+      <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
+    </div>
+
+    <p class="text-sm text-gray-500">
+      © 2026 Your Company. All rights reserved.
+    </p>
+  </div>
+</footer>
 
     </div>
   );

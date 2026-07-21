@@ -267,19 +267,11 @@ const reviews = [
 <img
   src={tour.image}
   alt={tour.name}
-  className="
-    object-cover 
-    w-full 
-    h-full 
-    transition 
-    duration-700 
-    group-hover:scale-110 
-    opacity-70
-  "
+  className=" object-cover  w-full  h-full  transition  duration-700  group-hover:scale-110  opacity-70"
 />
 
 <div className="absolute bottom-0 left-0 w-full p-[5%]">
-<h2 className="text-lg font-semibold text-white">
+<h2 className="text-2xl font-semibold text-white">
 {tour.name}
 </h2>
 </div>

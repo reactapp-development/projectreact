@@ -5,10 +5,12 @@ import taj from "./assets/taj.jpg";
 import golden from "./assets/golden.jpg";
 import hawa from "./assets/hawa.jpg";
 import lotus from "./assets/lotus.jpg";
+import { Link } from "react-router-dom";
 
 const India = () => {
   return (
     <div className="min-h-screen bg-[#08111f] text-white">
+      
 
       <div
         className="relative flex items-center justify-center w-full h-screen bg-cover"
@@ -16,6 +18,15 @@ const India = () => {
           backgroundImage: `linear-gradient(to bottom, rgba(8,17,31,0.2), rgba(8,17,31,1)), url(${india})`
         }}
       >
+         <Link
+           to="/destination"
+           className="absolute top-8 right-8 px-6 py-3 rounded-full 
+           bg-white/20 backdrop-blur-md border border-white/30
+           text-white font-semibold hover:bg-white/40 transition"
+         >
+           Go Back To Destination
+         </Link>
+        
         <div className="text-center">
           <h1 className="text-[6vw] font-extrabold">
             Explore India
@@ -138,7 +149,7 @@ const India = () => {
       </div>
       </div>
 
-
+      
     </div>
   );
 };
