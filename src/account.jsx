@@ -65,7 +65,7 @@ const Account = () => {
 
 
     return ( 
-        <div className="flex justify-center items-center h-screen m-fullbg-linear-to-br from-gray-600 via-blue-300 to-gray-950 text-black " >
+        <div className="flex justify-center items-center h-screen m-full bg-linear-to-br from-gray-600 via-blue-300 to-gray-950 text-black " >
             <div className=" p-6 rounded-2xl bg-white/20 backdrop-blur-lg w-[50%]">
             <div >
                 <h1 className=" font-semibold text-xl">
@@ -119,7 +119,7 @@ const Account = () => {
                         placeholder="Enter your Password" />
                     </div>
                     <div>
-                        <label className="font-semibold">Confirm Password</label>
+                        <label className="font-semibold ">Confirm Password</label>
                         <input className="border border-gray-500 p-2 rounded-lg mb-4" 
                         type="password"
                         placeholder="Re-enter your password"

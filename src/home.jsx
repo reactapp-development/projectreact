@@ -5,11 +5,47 @@ import india from "./assets/india.jpg";
 import japan from "./assets/japan.jpg";
 import bgImage from "./assets/images.jpg";
 import france from "./assets/france.jpg"
+import korea from "./assets/korea.jpg"
+import thailand from "./assets/thailand.jpg"
+import switzerland from "./assets/switzerland.jpg"
 import j from "./assets/j.jpg"
 
 const Home = () => {
   const [slide, setSlide] = useState(0);
   const [reviewIndex, setReviewIndex] = useState(0);
+
+  const tours = [
+  {
+    name: "India",
+    image: india,
+    link: "/india",
+  },
+  {
+    name: "Japan",
+    image: japan,
+    link: "/japan",
+  },
+  {
+    name: "France",
+    image: france,
+    link: "/france",
+  },
+  {
+    name: "Korea",
+    image: korea,
+    link: "/korea",
+  },
+  {
+    name: "Thailand",
+    image: thailand,
+    link: "/thailand",
+  },
+  {
+    name: "Switzerland",
+    image: switzerland,
+    link: "/switzerland",
+  }
+];
 
 const slides = [
   {
@@ -33,6 +69,7 @@ const slides = [
     description:
       "Explore temples, cities, mountains, and unique Japanese experiences. Experience Japan's rich culture, stunning landscapes, and the harmony between tradition and technology.",
   },
+  
 ];
 
   useEffect(() => {
@@ -68,7 +105,7 @@ const reviews = [
     rating: 4,
   },
   {
-    text: "From private jets to exclusive museum entries, Travelly made our anniversary expedition unforgettable.",
+    text: "From private jets to exclusive museum entries, This app made our anniversary expedition unforgettable.",
     name: "Shirshika Pandey",
     role: "Tech Executive",
     image: france,
@@ -83,7 +120,7 @@ const reviews = [
   },
 ];
   return (
-    <div className="bg-[#08111f] min-h-screen">
+    <div className="bg-[#08111f] min-h-screen overflow-x-hidden">
       <div
         className="relative flex items-center justify-center w-full h-screen overflow-hidden"
         style={{
@@ -177,7 +214,7 @@ const reviews = [
           <div>
 
             <motion.h1
-            className="text-[4vw] font-bold"
+            className="text-[4vw] font-bold text-blue-300 hover:text-yellow-300"
             initial={{ opacity: 0, x: "-15vh" }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
@@ -201,71 +238,61 @@ const reviews = [
         </div>
 
          
-        <div className="flex gap-8 mt-[8vh] overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4">
+        <div className="overflow-hidden mt-[8vh]">
 
-          <Link to="/india" className="min-w-80 shrink-0">
-          <div className="relative overflow-hidden rounded-[2%] group h-[40vh] cursor-point">
-            <img
-              src={india}
-              alt="India"
-              className="object-cover w-full h-full transition duration-700 group-hover:scale-110 opacity-70 "
-            />
+<motion.div
+  className="flex gap-8"
+  animate={{
+    x: ["0%", "-50%"]
+  }}
+  transition={{
 
-            <div className="absolute bottom-0 left-0 w-full p-[5%]">
-              <h2 className="text-lg font-semibold text-white">
-                India
-              </h2>
-            </div>
-          </div>
-          </Link>
+  duration: 10,
+  repeat: Infinity,
+  ease: "linear"
 
-          <Link to="/japan" className="min-w-80 shrink-0">
-          <div className="relative overflow-hidden rounded-[2%] group h-[40vh] cursor-pointer">
-            <img
-              src={japan}
-              alt="Japan"
-              className="object-cover w-full h-full transition duration-700 group-hover:scale-110 opacity-70"
-            />
+  }}
+>
 
-            <div className="absolute bottom-0 left-0 w-full p-[5%]">
-              <h2 className="text-lg font-semibold text-white">
-                Japan
-              </h2>
+{[...tours, ...tours].map((tour, index) => (
 
-            </div>
-          </div>
-          </Link>
+<Link 
+  to={tour.link}
+  key={index}
+  className="block w-[80%] md:w-[40%] lg:w-[30%] shrink-0"
+>
 
-          <Link to="/france" className="min-w-80 shrink-0">
-          <div className="relative overflow-hidden rounded-[2%] group h-[40vh]">
-            <img
-              src={france}
-              alt="France"
-              className="object-cover w-full h-full transition duration-700 group-hover:scale-110 opacity-70"
-            />
+<div className="relative overflow-hidden rounded-[2%] group h-[40vh]">
 
+<img
+  src={tour.image}
+  alt={tour.name}
+  className="
+    object-cover 
+    w-full 
+    h-full 
+    transition 
+    duration-700 
+    group-hover:scale-110 
+    opacity-70
+  "
+/>
 
-            <div className="absolute bottom-0 left-0 w-full p-[5%]">
-              <h2 className="text-lg font-semibold text-white">
-                France
-              </h2>
+<div className="absolute bottom-0 left-0 w-full p-[5%]">
+<h2 className="text-lg font-semibold text-white">
+{tour.name}
+</h2>
+</div>
 
-            </div>
-            
-          </div>
-          </Link>
-          <Link to="/destination">
-            <button
-              className="absolute right-[5%] z-20 bg-white/20 hover:bg-[#ffb703] 
-              w-14 h-14 rounded-full text-white text-3xl transition mt-25"
-            >
-              ❯
-            </button>
-          </Link>
+</div>
 
-        </div>
-        
+</Link>
 
+))}
+
+</motion.div>
+
+</div>
       </div>
       <div>
             <div>
@@ -328,70 +355,33 @@ const reviews = [
   </div>
 </div>
           </div>
-          <footer className="bg-[#0a1628] text-white mt-20">
-  <div className="max-w-7xl mx-auto px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+          <footer class="bg-gray-900 text-white py-8 mt-10">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 class="text-xl font-semibold mb-3">Contact Us</h3>
 
-    {/* Logo/About */}
-    <div>
-      <h2 className="text-2xl font-bold text-[#79b8ff]">
-        Travelly
-      </h2>
-      <p className="mt-4 text-gray-400">
-        Explore breathtaking destinations and create unforgettable
-        memories with Travelly.
-      </p>
+    <p class="text-gray-300 mb-2">
+      Email:
+      <a href="#" class="text-blue-400 hover:underline">
+        hello@gmail.com
+      </a>
+    </p>
+
+    <p class="text-gray-300 mb-4">
+      Phone:
+      <a href="#" class="text-blue-400 hover:underline">
+        +1 234 567 890
+      </a>
+    </p>
+
+    <div class="flex justify-center gap-5 mb-4">
+      <a href="#" class="text-gray-400 hover:text-white">Facebook</a>
+      <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+      <a href="#" class="text-gray-400 hover:text-white">LinkedIn</a>
     </div>
 
-    {/* Quick Links */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4">
-        Quick Links
-      </h3>
-      <ul className="space-y-2 text-gray-400">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/destination">Destinations</Link></li>
-        <li><Link to="/india">India</Link></li>
-        <li><Link to="/japan">Japan</Link></li>
-      </ul>
-    </div>
-
-    {/* Contact */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4">
-        Contact
-      </h3>
-
-      <p className="text-gray-400">
-        📧 travelly@email.com
-      </p>
-
-      <p className="text-gray-400 mt-2">
-        📞 +91 98765 43210
-      </p>
-
-      <p className="text-gray-400 mt-2">
-        📍 Patiala, Punjab
-      </p>
-    </div>
-
-    {/* Social */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4">
-        Follow Us
-      </h3>
-
-      <div className="flex gap-4 text-2xl">
-        <a href="#">🌐</a>
-        <a href="#">📘</a>
-        <a href="#">📷</a>
-        <a href="#">🐦</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div className="border-t border-gray-700 py-6 text-center text-gray-500">
-    © {new Date().getFullYear()} Travelly. All rights reserved.
+    <p class="text-sm text-gray-500">
+      © 2026 Your Company. All rights reserved.
+    </p>
   </div>
 </footer>
     </div>
