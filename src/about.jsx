@@ -122,7 +122,7 @@ const journeySteps = [
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="w-full h-[450px] object-cover rounded-3xl shadow-2xl"
+      className="w-full h-[68vh] object-cover rounded-3xl shadow-2xl"
     />
 
     <div className="bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 p-8">
