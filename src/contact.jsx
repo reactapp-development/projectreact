@@ -1,9 +1,15 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import contact from "./assets/contact.jpg";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { useState } from "react";
 import contactus from "./assets/contactus.jpg"
 import emailjs from "@emailjs/browser";
+import india from "./assets/india.jpg"
+import japan from "./assets/japan.jpg"
+import france from "./assets/france.jpg"
+import korea from "./assets/korea.jpg"
+import thailand from "./assets/thailand.jpg"
+import switzerland from "./assets/switzerland.jpg"
 
 const Contact = () => {
 
@@ -16,6 +22,55 @@ const Contact = () => {
     travelers: "",
     message: "",
   });
+
+  const [cards, setCards] = useState([
+  {
+    image: india,
+    name: "India"
+  },
+  {
+    image: japan,
+    name: "Japan"
+  },
+  {
+    image: france,
+    name: "France"
+  },
+  {
+    image: switzerland,
+    name: "Switzerland"
+  },
+  {
+    image: thailand,
+    name: "Thailand"
+  },
+  {
+    image: korea,
+    name: "Korea"
+  }
+]);
+
+useEffect(() => {
+
+  const interval = setInterval(() => {
+
+    setCards((prev) => {
+
+      const updated = [...prev];
+
+      const first = updated.shift();
+
+      updated.push(first);
+
+      return updated;
+
+    });
+
+  }, 3000);
+
+  return () => clearInterval(interval);
+
+}, []);
 
 
   // Handle input changes
@@ -103,7 +158,7 @@ const handleSubmit = (e) => {
       <section className="px-[8%] py-20 grid md:grid-cols-2 gap-12">
          
         
-
+        {/*carousel*/}
         <motion.div
           initial={{opacity:0,x:-50}}
           whileInView={{opacity:1,x:0}}
@@ -111,9 +166,65 @@ const handleSubmit = (e) => {
           transition={{duration:0.8}}
           className="space-y-5 flex flex-col justify-center items-center"
         >
-          <div className="rounded-3xl overflow-hidden shadow-xl  ">
-            
-          </div>
+          <div className="relative w-full h-[50vh] mb-8">
+
+  {cards.map((card,index)=>(
+
+    <motion.div
+
+      key={card.name}
+
+      className="absolute w-[95%] h-[40vh]"
+
+      animate={{
+
+        x:index * 18,
+
+        y:index * 14,
+
+        scale:1 - index * 0.06,
+
+        rotate:index * 2,
+
+        zIndex:cards.length-index,
+
+        opacity:1-index*0.08
+
+      }}
+
+      transition={{
+
+        duration:0.8,
+
+        ease:"easeInOut"
+
+      }}
+
+    >
+
+      <img
+
+        src={card.image}
+
+        alt={card.name}
+
+        className="w-full h-full object-cover rounded-3xl shadow-2xl border-2 border-white/20"
+
+      />
+
+
+      <h2 className="absolute bottom-5 left-6 text-2xl font-bold text-white drop-shadow-2xl">
+
+        {card.name}
+
+      </h2>
+
+
+    </motion.div>
+
+  ))}
+
+</div>
 
           <div className="bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 p-8 w-full">
 
@@ -122,56 +233,44 @@ const handleSubmit = (e) => {
           </h2>
 
 
-          <div className="space-y-6 text-center ">
+          <div className="space-y-6 p-4">
 
-            <div >
+            <div className="flex items-center">
+              <FaEnvelope className="text-yellow-300 text-xl w-8" />
 
-              <FaEnvelope className="text-yellow-300 text-xl mx-auto"/>
+              <span className="font-semibold w-24">
+                Email:
+              </span>
 
-              <div>
-                <h3 className="font-semibold text-sm">
-                  Email
-                </h3>
-
-                <p className="text-gray-300 text-sm">
-                  umanggg2006@gmail.com
-                </p>
-              </div>
-
+              <span className="text-gray-300">
+                umanggg2006@gmail.com
+              </span>
             </div>
 
 
-            <div >
+            <div className="flex items-center">
+              <FaPhone className="text-yellow-300 text-xl w-8" />
 
-              <FaPhone className="text-yellow-300 text-xl mx-auto"/>
+              <span className="font-semibold w-24">
+                Phone:
+              </span>
 
-              <div>
-                <h3 className="font-semibold text-sm">
-                  Phone
-                </h3>
-
-                <p className="text-gray-300 text-sm">
-                  +91 234 567 890
-                </p>
-              </div>
-
+              <span className="text-gray-300">
+                +91 234 567 890
+              </span>
             </div>
 
 
-            <div>
+            <div className="flex items-center">
+              <FaMapMarkerAlt className="text-yellow-300 text-xl w-8" />
 
-              <FaMapMarkerAlt className="text-yellow-300 text-xl mx-auto"/>
+              <span className="font-semibold w-24">
+                Location:
+              </span>
 
-              <div>
-                <h3 className="font-semibold text-sm">
-                  Location
-                </h3>
-
-                <p className="text-gray-300 text-sm">
-                  Chandigarh
-                </p>
-              </div>
-
+              <span className="text-gray-300">
+                Chandigarh
+              </span>
             </div>
 
           </div>
@@ -376,7 +475,7 @@ const handleSubmit = (e) => {
 
         <iframe
           title="Google Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5768.756347748437!2d76.7743624043896!3d30.714941050279908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fec55e80bb475%3A0xc830139fe939daa5!2sGurudwara%20Chowk%2C%20Chandigarh!5e0!3m2!1sen!2sin!4v1784695351573!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13721.298923565786!2d76.75622820854186!3d30.70927011686135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed2b8e53e789%3A0xaff16cc32c19ac1e!2sTravel%20Partners!5e0!3m2!1sen!2sin!4v1784783296477!5m2!1sen!2sin"
           className="w-full h-full border-0  brightness-50 contrast-100"
           allowFullScreen
           loading="lazy"
