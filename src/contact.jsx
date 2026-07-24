@@ -100,7 +100,7 @@ const handleSubmit = (e) => {
   emailjs
     .send(
       "service_v9wffv9",
-      "template_1d32ydh",
+      "template_kf58eok",
       formData,
       "06bXteaS3AvRsJZiv"
     )
