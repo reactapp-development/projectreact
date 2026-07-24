@@ -85,35 +85,10 @@ const Account = () => {
 
   return (
 
-    <div
-      className="
-      min-h-screen
-      flex
-      justify-center
-      items-center
-      p-4
-      bg-linear-to-br
-      from-gray-600
-      via-blue-300
-      to-gray-950
-      text-black
-      "
-    >
+    <div className=" min-h-screen flex justify-center items-center p-4 bg-linear-to-br from-gray-600 via-blue-300 to-gray-950 text-black overflow-x-hidden ">
 
 
-      <div
-        className="
-        w-full
-        sm:w-11/12
-        md:w-4/5
-        lg:w-2/3
-        xl:w-1/2
-        p-6
-        rounded-2xl
-        bg-white/20
-        backdrop-blur-lg
-        "
-      >
+      <div className="w-full sm:w-11/12 md:w-4/5 lg:w-2/3 xl:w-1/2 p-6 rounded-2xl bg-white/20 backdrop-blur-lg  ">
 
 
         <div>
@@ -128,9 +103,6 @@ const Account = () => {
           </p>
 
         </div>
-
-
-
 
 
         <div className="mt-6 space-y-4">

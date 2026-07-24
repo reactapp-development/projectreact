@@ -352,7 +352,7 @@ const reviews = [
     <p className="text-gray-300 mb-2">
       Email:
       <a href="#" class="text-blue-400 hover:underline">
-        hello@gmail.com
+        umanggg2006@gmail.com
       </a>
     </p>
 
@@ -364,8 +364,8 @@ const reviews = [
     </p>
 
     <div className="flex flex-wrap justify-center gap-5 mb-4">
-      <a href="https://www.instagram.com/umangguleria/" class="text-gray-400 hover:text-white">Instagram</a>
-      <a href="https://www.linkedin.com/in/umang-guleria-947468332?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="text-gray-400 hover:text-white">LinkedIn</a>
+      <a href="https://www.instagram.com/umangguleria/" className="text-gray-400 hover:text-white">Instagram</a>
+      <a href="https://www.linkedin.com/in/umang-guleria-947468332?utm_source=share_via&utm_content=profile&utm_medium=member_android" className="text-gray-400 hover:text-white">LinkedIn</a>
     </div>
 
     <p className="text-sm text-gray-500">

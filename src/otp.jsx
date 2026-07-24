@@ -60,7 +60,7 @@ function Otp() {
                 maxLength={6}
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
-                className="border p-2 rounded"
+                className="border rounded"
             />
           </div>
         </div>
