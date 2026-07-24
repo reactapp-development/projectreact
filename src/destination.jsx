@@ -55,7 +55,7 @@ const Destination = () => {
   ];
 
   return (
-    <div className="bg-[#08111f] w-full min-h-screen text-white sm:overflow-x-hidden md:overflow-x-hidden">
+    <div className="bg-[#08111f] left-0 right-0 min-h-screen text-white overflow-x-hidden ">
 
       <div className="text-center px-4">
 

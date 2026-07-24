@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="flex justify-between items-center h-16 md:h-[10vh] fixed top-0 z-50 w-full bg-[#08111f]/35 backdrop-blur-md border-b border-white/10 px-4 md:px-8 shadow-2xl">
+      <nav className="flex justify-between items-center h-16 md:h-[10vh] fixed top-0 z-50 left-0 right-0 bg-[#08111f]/35 backdrop-blur-md border-b border-white/10 px-4 md:px-8 shadow-2xl">
 
         <h1 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">
           Traverlly
