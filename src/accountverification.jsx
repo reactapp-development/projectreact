@@ -11,17 +11,40 @@ function AccountVerification() {
     const [otp, setOtp] = useState("");
 
 
-  const handleNext = async () => {
-    const storedOTP = sessionStorage.getItem("accountOTP");
+  const handleNext = () => {
+  const storedOTP = sessionStorage.getItem("accountOTP");
 
-    if (otp.trim() === storedOTP) {
-        alert("OTP verification successful");
+  if (otp.trim() === storedOTP) {
+    const newUser = JSON.parse(sessionStorage.getItem("newUser"));
 
-        navigate("/home");
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    } else {
-        alert("Invalid OTP");
+    const userExists = users.some(
+      (user) => user.email === newUser.email
+    );
+
+    if (userExists) {
+      alert("Account already exists with this email.");
+      return;
     }
+
+    users.push(newUser);
+
+    localStorage.setItem(
+      "users",
+      JSON.stringify(users)
+    );
+
+    sessionStorage.removeItem("newUser");
+    sessionStorage.removeItem("accountOTP");
+    sessionStorage.removeItem("email");
+
+    alert("OTP verification successful!");
+
+    navigate("/login");
+  } else {
+    alert("Invalid OTP");
+  }
 };
 
  // Timer
