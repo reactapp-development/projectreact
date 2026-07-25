@@ -56,22 +56,37 @@ const handleChange = (e) => {
 
   // Email verification
   const handleNext = async () => {
-    if (!isEmailValid) {
-      alert("Enter a valid email.");
-      return;
-    }
+  if (!isEmailValid) {
+    alert("Enter a valid email.");
+    return;
+  }
 
-    const success = await sendOTP();
+  if (!formData.password) {
+    alert("Please enter a password.");
+    return;
+  }
 
-    if (success) {
-  sessionStorage.setItem(
-    "newUser",
-    JSON.stringify(formData)
-  );
+  if (!formData.confirmPassword) {
+    alert("Please confirm your password.");
+    return;
+  }
 
-  navigate("/accountverification");
-}
-}
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
+
+  const success = await sendOTP();
+
+  if (success) {
+    sessionStorage.setItem(
+      "newUser",
+      JSON.stringify(formData)
+    );
+
+    navigate("/accountverification");
+  }
+};
 
   return (
     <div className="min-h-screen flex justify-center items-center p-4 bg-linear-to-br from-gray-600 via-blue-300 to-gray-950 text-black overflow-x-hidden">
@@ -161,10 +176,11 @@ const handleChange = (e) => {
               <input
                 type="password"
                 name="password"
-                value={formData.password}
+                value={formData.password.confirmPassword}
                 onChange={handleChange}
                 placeholder="Enter your Password"
                 className="w-full mt-2 border border-gray-500 p-3 rounded-lg"
+                required
               />
             </div>
 
@@ -180,6 +196,7 @@ const handleChange = (e) => {
                 onChange={handleChange}
                 placeholder="Re-enter your password"
                 className="w-full mt-2 border border-gray-500 p-3 rounded-lg"
+                required
               />
             </div>
           </div>
