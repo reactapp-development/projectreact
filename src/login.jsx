@@ -39,12 +39,12 @@ function Login() {
 };
 
   return (
-    <div className="min-h-screen bg-gray-800 flex justify-center items-center p-4 pt-10">
+    <div className="min-h-screen bg-[#08111f] flex justify-center items-center p-4 pt-10">
       <div className="w-full sm:w-11/12 md:w-4/5 lg:w-3/5 min-h-[80vh] bg-white rounded-xl overflow-hidden flex flex-col lg:flex-row">
         {/* Left Side */}
         <div className="w-full lg:w-1/2 h-52 sm:h-64 lg:h-auto flex items-start rounded-t-xl lg:rounded-l-xl lg:rounded-tr-none bg-linear-to-br from-gray-600 via-blue-300 to-gray-950">
           <h1 className="text-white text-2xl font-semibold m-6">
-            Hello User
+            Traverlly
           </h1>
         </div>
 
