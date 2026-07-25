@@ -90,7 +90,8 @@ const journeySteps = [
   },
 ];
   return (
-    <div className="min-h-screen text-white bg-cover bg-center bg-fixed"style={{
+    <div className="min-h-screen text-white bg-cover bg-center bg-fixed overflow-x-hidden"
+    style={{
     backgroundImage:
       `linear-gradient(
         rgba(8,17,31,0.55),
