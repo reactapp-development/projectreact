@@ -278,7 +278,7 @@ const Home = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 1 }}
-            className="w-full lg:w-[40%] text-gray-300 text-xs"
+            className="w-full lg:w-[40%] text-gray-300 text-sm"
           >
             Explore breathtaking destinations carefully selected for unforgettable
             adventures, incredible landscapes, and memorable experiences.
