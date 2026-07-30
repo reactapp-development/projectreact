@@ -420,7 +420,7 @@ useEffect(() => {
               href="#"
               className="text-blue-400 hover:underline ml-2"
             >
-              +1 9317604459
+              +91 9317604459
             </a>
 
           </p>

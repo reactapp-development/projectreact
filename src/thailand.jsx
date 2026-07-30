@@ -148,6 +148,29 @@ const Thailand = () => {
           </div>
         </div>
       </div>
+      {/* Go To Top Button */}
+<div className="flex justify-center pb-10">
+
+  <button
+    onClick={() => window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })}
+    className="
+      px-6 py-3 
+      rounded-full
+      bg-[#79b8ff]
+      text-[#08111f]
+      font-bold
+      hover:bg-yellow-300
+      transition
+      shadow-lg
+    "
+  >
+    Go To Top ↑
+  </button>
+
+</div>
     </div>
   );
 };

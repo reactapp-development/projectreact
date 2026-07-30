@@ -136,6 +136,31 @@ const Destination = () => {
         ))}
 
       </div>
+      {/* Go To Top Arrow Button */}
+<button
+  onClick={() =>
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+  className="
+    fixed bottom-6 right-6
+    w-12 h-12
+    rounded-full
+    bg-[#79b8ff]
+    text-[#08111f]
+    text-2xl
+    font-bold
+    flex items-center justify-center
+    shadow-lg
+    hover:bg-yellow-300
+    transition
+    z-50
+  "
+>
+  ↑
+</button>
 
 
       <footer className="bg-gray-900 text-white py-8 mt-10 px-4">
@@ -193,6 +218,7 @@ const Destination = () => {
         </div>
 
       </footer>
+      
 
     </div>
   );
