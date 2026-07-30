@@ -28,7 +28,7 @@ const Japan = () => {
           text-white text-sm sm:text-base font-semibold
           hover:bg-white/40 transition"
         >
-          Go Back To Destination
+          Go To Destination
         </Link>
 
         <div className="text-center px-6">

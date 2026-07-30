@@ -22,7 +22,7 @@ const Thailand = () => {
           to="/destination"
           className="absolute top-4 right-4 sm:top-8 sm:right-8 px-4 py-2 sm:px-6 sm:py-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm sm:text-base font-semibold hover:bg-white/40 transition"
         >
-          Go Back To Destination
+          Go To Destination
         </Link>
 
         <div className="text-center max-w-4xl">
