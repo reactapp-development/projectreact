@@ -275,14 +275,14 @@ const journeySteps = [
     <p class="text-gray-300 mb-2">
       Email:
       <a href="#" class="text-blue-400 hover:underline">
-        hello@gmail.com
+        umangguleria@gmail.com
       </a>
     </p>
 
     <p class="text-gray-300 mb-4">
       Phone:
       <a href="#" class="text-blue-400 hover:underline">
-        +1 234 567 890
+        +91 9317604459
       </a>
     </p>
 
@@ -293,7 +293,7 @@ const journeySteps = [
     </div>
 
     <p class="text-sm text-gray-500">
-      © 2026 Your Company. All rights reserved.
+      © 2026 Traverlly. All rights reserved.
     </p>
   </div>
 </footer>

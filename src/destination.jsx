@@ -153,7 +153,7 @@ const Destination = () => {
               href="mailto:hello@gmail.com"
               className="text-blue-400 hover:underline"
             >
-              hello@gmail.com
+              umangguleria@gmail.com
             </a>
           </p>
 
@@ -164,7 +164,7 @@ const Destination = () => {
               href="tel:+1234567890"
               className="text-blue-400 hover:underline"
             >
-              +1 234 567 890
+              +91 9317604459
             </a>
           </p>
 
@@ -187,7 +187,7 @@ const Destination = () => {
 
 
           <p className="text-sm text-gray-500">
-            © 2026 Your Company. All rights reserved.
+            © 2026 Traverlly. All rights reserved.
           </p>
 
         </div>

@@ -15,6 +15,18 @@ const Home = () => {
 
   const [slide, setSlide] = useState(0);
   const [reviewIndex, setReviewIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const checkMobile = () => {
+    setIsMobile(window.innerWidth < 768);
+  };
+
+  checkMobile();
+  window.addEventListener("resize", checkMobile);
+
+  return () => window.removeEventListener("resize", checkMobile);
+}, []);
 
   const tours = [
     {
@@ -250,12 +262,13 @@ const Home = () => {
         <div className="overflow-hidden mt-6 md:mt-[8vh]">
 
           <motion.div
+          key={isMobile ? "mobile" : "desktop"}
             className="flex gap-6 md:gap-8"
             animate={{
-              x: ["0%", "-50%"]
+              x: ["0%", "-300%"]
             }}
             transition={{
-              duration: 8,
+              duration: isMobile ? 12 : 28,
               repeat: Infinity,
               ease: "linear"
             }}
@@ -266,7 +279,7 @@ const Home = () => {
               <Link
                 to={tour.link}
                 key={index}
-                className="block w-[85%] sm:w-[70%] md:w-[45%] lg:w-[30%] shrink-0"
+                className="block w-[75%] sm:w-[60%] md:w-[45%] lg:w-[30%] shrink-0"
               >
 
                 <div className="relative overflow-hidden rounded-[2%] group h-56 sm:h-72 md:h-80 lg:h-96">
@@ -407,7 +420,7 @@ const Home = () => {
               href="#"
               className="text-blue-400 hover:underline ml-2"
             >
-              +1 234 567 890
+              +1 9317604459
             </a>
 
           </p>
@@ -432,7 +445,7 @@ const Home = () => {
 
           <p className="text-sm text-gray-500">
 
-            © 2026 Your Company. All rights reserved.
+            © 2026 Traverlly. All rights reserved.
 
           </p>
 
